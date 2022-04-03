@@ -1,0 +1,48 @@
+extends ../layout/base
+block content
+    section.content-header
+
+    section.content
+        .box
+            .box-header.with-border
+                h3.box-title
+                    | Tambah Member
+                .box-tools.pull-right
+                    button(type='button', data-widget='collapse', data-toggle='tooltip',title='collapse').btn.btn-box-tool
+                        i.fa.fa-minus
+
+            .box-body
+                form(role='form',method='post' action='/customers/add')
+                    .row
+                        .col-xs-6
+                            .box-body
+                                - if (messages.msg_error)
+                                    .alert.alert-danger.alert-dismissable
+                                        button.close(type='button', data-dismiss='alert', aria-hidden='true')
+                                            | ×
+                                        h4
+                                            i.icon.fa.fa-ban
+                                            | Alert!
+                                        | !{messages.msg_error}
+                                .form-group
+                                    label
+                                        | Nama
+                                    input(type='text',value='#{name}',name='name',placeholder='Nama', autofocus).form-control
+                                .form-group
+                                    label
+                                        | alamat
+                                    input(type='text',name='address',placeholder='masukkan alamat').form-control
+                                .form-group
+                                    label
+                                        | Jumlah Pinjaman
+                                    input(type='text',value='#{email}',name='email',placeholder='masukkan jumlah pinjaman').form-control
+                                .form-group
+                                    label
+                                        | Jangka Waktu
+                                    input(type='text',name='phone',placeholder='masukkan jangka waktu').form-control
+                            .box-footer
+                                button(type='submit').btn.btn-primary
+                                    | Submit
+
+                                a(href='/customers').btn.btn-primary.pull-right
+                                    | Back

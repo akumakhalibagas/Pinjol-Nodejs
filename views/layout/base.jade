@@ -1,0 +1,12 @@
+doctype html 
+html 
+  head
+    include head.jade 
+      
+  body.hold-transition.skin-purple.sidebar-mini 
+    div.wrapper
+      include navigation.jade
+      include sidebar.jade
+      .content-wrapper
+        block content
+      include js.jade
